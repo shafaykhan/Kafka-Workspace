@@ -1,4 +1,4 @@
-package com.example.kafka_workspace.smart_news.producer.model;
+package com.example.kafka_workspace.smart_news.consumer.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

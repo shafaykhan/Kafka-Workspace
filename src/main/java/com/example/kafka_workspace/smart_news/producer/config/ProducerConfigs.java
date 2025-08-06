@@ -12,7 +12,7 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 import java.util.Map;
 
 @Configuration
-public class ProducerConfig {
+public class ProducerConfigs {
 
   @Bean
   public ProducerFactory<String, Article> producerFactory() {
