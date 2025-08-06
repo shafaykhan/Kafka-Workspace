@@ -16,6 +16,10 @@ import org.springframework.context.annotation.FilterType;
 				@ComponentScan.Filter(
 						type = FilterType.REGEX,
 						pattern = "com\\.example\\.kafka_workspace\\.structured\\..*"
+				),
+				@ComponentScan.Filter(
+						type = FilterType.REGEX,
+						pattern = "com\\.example\\.kafka_workspace\\.smart_news\\..*"
 				)
 		}
 )
