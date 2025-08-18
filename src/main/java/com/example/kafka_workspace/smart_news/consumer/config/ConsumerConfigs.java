@@ -18,13 +18,15 @@ public class ConsumerConfigs {
   @Bean
   public ConsumerFactory<String, Article> consumerFactory() {
     JsonDeserializer<Article> deserializer = new JsonDeserializer<>(Article.class);
-    deserializer.addTrustedPackages("*");
+    deserializer.addTrustedPackages("com.example.kafka_workspace.smart_news.consumer.model");
+    deserializer.setUseTypeMapperForKey(true);
 
     Map<String, Object> consumerConfigs = Map.of(
         ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092",
-        ConsumerConfig.GROUP_ID_CONFIG, "smart_news_group",
+        ConsumerConfig.GROUP_ID_CONFIG, "default_smart_news_group",
         ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class,
-        ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class
+        ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class,
+        ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest"
     );
 
     return new DefaultKafkaConsumerFactory<>(consumerConfigs, new StringDeserializer(), deserializer);
