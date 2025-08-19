@@ -17,3 +17,17 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+##
+#  docker exec -it <IMAGE NAME / ID> bash
+#
+#  kafka-console-producer --topic <TOPIC_NAME> --bootstrap-server localhost:9092
+#  kafka-console-consumer --topic <TOPIC_NAME> --from-beginning --bootstrap-server localhost:9092
+#
+#  kafka-topics --list --bootstrap-server localhost:9092
+#  kafka-topics --create --topic <TOPIC_NAME> --partitions 3 --replication-factor 1 --bootstrap-server localhost:9092
+#  kafka-topics --describe --topic <TOPIC_NAME> --bootstrap-server localhost:9092
+#  kafka-topics --delete --topic <TOPIC_NAME> --bootstrap-server localhost:9092
+#
+#  kafka-consumer-groups --bootstrap-server localhost:9092 --list
+#
